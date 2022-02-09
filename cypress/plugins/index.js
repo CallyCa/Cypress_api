@@ -45,7 +45,7 @@ module.exports = (on, config) => {
 
   function getConfigurationByFile(file) {
     // caminho da pasta onde estão presentes os arquivos JSON dos ambientes
-    const pathToConfigFile = path.resolve("environmentsConfig", `${file}.json`);
+    const pathToConfigFile = path.resolve("env_config", `${file}.json`);
 
     return fs.readJson(pathToConfigFile);
   }
