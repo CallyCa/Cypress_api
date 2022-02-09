@@ -1,0 +1,17 @@
+name: Cypress API tests
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+        
+      - name: Install ServeRest
+        run: npm i serverest
+        
+      - name: Run ServeRest
+        run: (npx serverest@latest &)
+        
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
